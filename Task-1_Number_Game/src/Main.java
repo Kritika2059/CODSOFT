@@ -32,7 +32,7 @@ public class Main {
                 System.out.println();
                 System.out.print("Guess a number: ");
                 int guess = scanner.nextInt();
-
+                remainingattempts--;
 
                 if (guess > randomNumber) {
                     System.out.println("Your guess is TOO HIGH, Try Again");
@@ -41,15 +41,13 @@ public class Main {
                 else if (guess < randomNumber) {
                     System.out.println("Your guess is Too LOW, Try Again");
                     System.out.println("Attempts remaining:: " + remainingattempts);
-                    remainingattempts--;
                 }
                 else {
                     System.out.println("*****Congratulations!!! You guessed the number in " + (totalAttempt-remainingattempts) + " attempts.*****");
                     userscore++;
+                    remainingattempts++;
                     break;
                 }
-
-                remainingattempts--;
             }
             if (remainingattempts == 0) {
                 System.out.println();
